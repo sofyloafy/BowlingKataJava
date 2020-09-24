@@ -77,5 +77,12 @@ public class BowlingGameTest {
         bowling.roll(10);
         assertEquals(137, bowling.score());
     }
+
+    @Test
+    public void RealTest() {
+        int[] rolls = {0,10,5,5,3,2,10,10,3,7,7,1,4,2,9,1,8,2,5};
+        setArrayRolls(rolls);
+        assertEquals(140, bowling.score());
+    }
 }
 
