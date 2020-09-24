@@ -12,11 +12,17 @@ public class Bowling {
         int index = 0;
         for (int i = 0; i < 10; i++){
             score += rollIndex(index++);
-            score += rollIndex(index++);
+            if(isStrike(index - 1)) score += rollIndex(index, index + 1);
+            else {
+                score += rollIndex(index++);
+            }
         }
         return score;
     }
 
+    private boolean isStrike(int index) {
+       return rolls[index] == 10;
+    }
     private int rollIndex(int... indexes) {
         int sum = 0;
         for (int i = 0; i < indexes.length; i++) sum += rolls[indexes[i]];

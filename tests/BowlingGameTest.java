@@ -61,7 +61,8 @@ public class BowlingGameTest {
     public void OnesBonusTest(){
         setRolls(10, 1);
         bowling.roll(10);
-        assertEquals(20, bowling.score());
+        setRolls(8,1);
+        assertEquals(30, bowling.score());
     }
 }
 
