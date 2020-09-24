@@ -15,6 +15,7 @@ public class Bowling {
             if(isStrike(index - 1)) score += rollIndex(index, index + 1);
             else {
                 score += rollIndex(index++);
+                if(isSpare(index - 2)) score += rollIndex(index);
             }
         }
         return score;
@@ -23,6 +24,11 @@ public class Bowling {
     private boolean isStrike(int index) {
        return rolls[index] == 10;
     }
+
+    private boolean isSpare(int index){
+        return rolls[index] + rolls[index + 1] == 10;
+    }
+
     private int rollIndex(int... indexes) {
         int sum = 0;
         for (int i = 0; i < indexes.length; i++) sum += rolls[indexes[i]];

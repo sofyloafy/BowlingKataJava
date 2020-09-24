@@ -32,14 +32,14 @@ public class BowlingGameTest {
         assertEquals(0, bowling.score());
     }
 
-    void setRolls(int n, int pins){
-        for (int i = 0; i < n; i++){
+    void setRolls(int frames, int pins){
+        for (int i = 0; i < frames; i++){
             bowling.roll(pins);
         }
     }
 
-    void set2Rolls(int n, int pin1, int pin2){
-        for (int i = 0; i < n; i++){
+    void set2Rolls(int frames, int pin1, int pin2){
+        for (int i = 0; i < frames; i++){
             bowling.roll(pin1);
             bowling.roll(pin2);
         }
@@ -69,6 +69,13 @@ public class BowlingGameTest {
     public void FullBonusTest(){
         setRolls(12, 10);
         assertEquals(300, bowling.score());
+    }
+
+    @Test
+    public void FullHalfBonusTest1(){
+        set2Rolls(10, 3, 7);
+        bowling.roll(10);
+        assertEquals(137, bowling.score());
     }
 }
 
