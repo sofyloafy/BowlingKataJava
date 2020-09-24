@@ -4,16 +4,15 @@ public class Bowling {
 
     public void roll(int roll) {
         rolls[currentRollIndex++] = roll;
+
     }
 
     public int score() {
         int score = 0;
         int index = 0;
         for (int i = 0; i < 10; i++){
-//            System.out.println(index);
             score += rollIndex(index++);
             score += rollIndex(index++);
-//            System.out.println(score);
         }
         return score;
     }

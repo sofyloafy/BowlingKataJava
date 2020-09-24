@@ -32,9 +32,9 @@ public class BowlingGameTest {
         assertEquals(0, bowling.score());
     }
 
-    void setRolls(int n, int pin){
+    void setRolls(int n, int pins){
         for (int i = 0; i < n; i++){
-            bowling.roll(pin);
+            bowling.roll(pins);
         }
     }
 
@@ -57,11 +57,11 @@ public class BowlingGameTest {
         assertEquals(20, bowling.score());
     }
 
-//    @Test
-//    public void OnesBonusTest(){
-//        setRolls(10, 1);
-//        bowling.roll(10);
-//        setRolls(8,1);
-//        assertEquals(30, bowling.score());
-//    }
+    @Test
+    public void OnesBonusTest(){
+        setRolls(10, 1);
+        bowling.roll(10);
+        assertEquals(20, bowling.score());
+    }
 }
+
