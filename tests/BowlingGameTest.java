@@ -64,5 +64,11 @@ public class BowlingGameTest {
         setRolls(8,1);
         assertEquals(30, bowling.score());
     }
+
+    @Test
+    public void FullBonusTest(){
+        setRolls(12, 10);
+        assertEquals(300, bowling.score());
+    }
 }
 
